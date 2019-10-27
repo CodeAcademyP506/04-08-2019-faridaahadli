@@ -16,11 +16,14 @@ $(document).ready(function(){
         }
    
     })
+    // ---------------------------------------
+    // BeginActice class for navbar
     $(window).scroll(function() {
         var windscroll = $(window).scrollTop();
-        if (windscroll >= 100) {
+        if (windscroll >= document.getElementById("intro").offsetTop) {
             $('section').each(function(i) {
-                if ($(this).position().top <= windscroll - 300) {
+               
+                if ( windscroll>=$(this).offset().top && !$(this).hasClass("same")) {
                     $('#navList a.active').removeClass('active');
                     $('#navList a').eq(i).addClass('active');
 
@@ -34,6 +37,8 @@ $(document).ready(function(){
         }
     
     }).scroll();
+// EndActive class for navbar
+// ----------------------------------------
         let a=0;
         let b=0;
         let c=0;
